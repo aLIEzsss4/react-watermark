@@ -44,8 +44,6 @@ const defaultStyle: React.CSSProperties = {
 const waterMarkStyle = getStyleStr(defaultStyle);
 const noop = function () {};
 
-console.log(waterMarkStyle);
-
 const Watermark: React.FC<WatermarkProps> = ({
   style,
   text,
