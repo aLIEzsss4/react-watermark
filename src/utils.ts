@@ -56,11 +56,11 @@ export function getDrawPatternByCanvas(
   canvas.width = width;
   canvas.height = height;
 
-  canvas.style.width = `${width}px`;
-  canvas.style.height = `${height}px`;
+  // canvas.style.width = `${width}px`;
+  // canvas.style.height = `${height}px`;
 
-  canvas.setAttribute('width', `${width * dpr}px`);
-  canvas.setAttribute('height', `${height * dpr}px`);
+  // canvas.setAttribute('width', `${width * dpr}px`);
+  // canvas.setAttribute('height', `${height * dpr}px`);
 
   const ctx = canvas.getContext('2d');
 
@@ -71,20 +71,21 @@ export function getDrawPatternByCanvas(
   // 设置字体
   ctx.font = `normal ${fontWeight} ${fontSize}px '${fontFamily}'`;
 
-  ctx.scale(dpr, dpr);
+  // ctx.scale(dpr, dpr);
 
-  ctx.strokeRect(0, 0, width, height);
+  // 调试用代码
+  // ctx.strokeRect(0, 0, width, height);
 
-  ctx.moveTo (0, height);
-  ctx.lineTo (width, 0);
-  ctx.strokeStyle = 'red';
-  ctx.stroke();
+  // ctx.moveTo (0, height);
+  // ctx.lineTo (width, 0);
+  // ctx.strokeStyle = 'red';
+  // ctx.stroke();
 
 
-  ctx.moveTo (0, 0);
-  ctx.lineTo (width, height);
-  ctx.strokeStyle = 'red';
-  ctx.stroke();
+  // ctx.moveTo (0, 0);
+  // ctx.lineTo (width, height);
+  // ctx.strokeStyle = 'red';
+  // ctx.stroke();
 
   ctx.textAlign = 'center';
 

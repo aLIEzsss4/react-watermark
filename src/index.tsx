@@ -38,7 +38,7 @@ const defaultOptions: Options = {
   fontColor: '#727071',
   fontWeight: 'normal',
   fontFamily: 'sans-serif',
-  fontSize: 9,
+  fontSize: 14,
 }
 
 const defaultStyle: React.CSSProperties = {
