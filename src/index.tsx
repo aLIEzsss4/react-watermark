@@ -1,30 +1,44 @@
 import React from 'react';
-import { getStyleStr, genRandomId, SecurityDefense, getWaterMarkCanvas } from './utils';
+import { getStyleStr, genRandomId, getDrawPatternByCanvas } from './utils';
+import SecurityDefense from './security-defense';
 import { Options, Observers } from './interface';
 
 export interface WatermarkProps {
+  /**
+   * 额外的样式
+   */
   style?: React.CSSProperties;
+  /**
+   * 是否开启监视模式
+   */
   monitor?: boolean;
+  /**
+   * 指定渲染引擎
+   */
+  renderer?: 'canvas' | 'svg'
   /**
    * 水印文本
    */
-  text?: string;
+  text?: string | string[];
   /**
    * 水印配置
    */
   options?: Options;
+  /**
+   *
+   */
   securityAlarm?: () => void;
 }
 
 const defaultOptions: Options = {
-  chunkWidth: 200,
-  chunkHeight: 60,
-  textAlign: 'left',
-  textBaseline: 'bottom',
-  globalAlpha: 0.17,
-  font: '14px Microsoft Yahei',
-  rotateAngle: -0.26,
-  fillStyle: '#666'
+  width: 160,
+  height: 100,
+  opacity: 0.15,
+  rotate: -20,
+  fontColor: '#727071',
+  fontWeight: 'normal',
+  fontFamily: 'sans-serif',
+  fontSize: 9,
 }
 
 const defaultStyle: React.CSSProperties = {
@@ -85,7 +99,7 @@ const Watermark: React.FC<WatermarkProps> = ({
 
   const getCanvasUrl = () => {
     const newOptions = Object.assign({}, defaultOptions, options)
-    return getWaterMarkCanvas(text, newOptions)
+    return getDrawPatternByCanvas(text, newOptions)
   }
 
   const updateObserver = (observers: Observers = {}) => {
@@ -112,6 +126,7 @@ const Watermark: React.FC<WatermarkProps> = ({
 
 Watermark.defaultProps = {
   monitor: true,
+  renderer: 'canvas',
   options: defaultOptions,
   securityAlarm: noop
 }

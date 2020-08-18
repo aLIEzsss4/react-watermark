@@ -1,5 +1,6 @@
-import { genRandomId } from './';
-import { Observers, WatermarkDOM } from '../interface';
+import { genRandomId } from './utils';
+import { Observers, WatermarkDOM } from './interface';
+import { getMutationObserver } from './utils';
 
 interface SecurityHooks {
   securityAlarm: () => void;
@@ -40,12 +41,8 @@ class SecurityDefense {
     return document.getElementById(id)
   }
 
-  getMutationObserver = () => {
-    return window.MutationObserver || window['WebKitMutationObserver'] || window['MozMutationObserver']
-  }
-
   registerNodeRemoveListener = (target) => {
-    const MutationObserver = this.getMutationObserver();
+    const MutationObserver = getMutationObserver();
     let observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.type === 'childList') {
@@ -82,7 +79,7 @@ class SecurityDefense {
   }
 
   registerNodeAttrChangeListener = (target) => {
-    const MutationObserver = this.getMutationObserver();
+    const MutationObserver = getMutationObserver();
 
     let observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {

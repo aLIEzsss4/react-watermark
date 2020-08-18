@@ -1,36 +1,38 @@
+import { CSSProperties } from 'react';
+
 export interface Options {
   /**
-   * 水印区域的宽度
+   * 单个水印区域宽度
    */
-  chunkWidth?: number;
+  width?: number;
   /**
-   * 水印区域的宽度
+   * 单个水印区域高度
    */
-  chunkHeight?: number;
+  height?: number;
   /**
-   * 文本的位置
+   * 透明度，取值: 0~1
    */
-  textAlign?: CanvasTextAlign;
+  opacity?: number;
   /**
-   * 绘制文本时使用的文本基线
+   * 旋转的角度，取值: -360~360
    */
-  textBaseline?: CanvasTextBaseline;
+  rotate?: number;
   /**
-   * 透明度, 取值 [0, 1]
+   * 设置字体大小
    */
-  globalAlpha?: number;
+  fontSize?: number;
   /**
-   * 旋转的角度
+   * 设置字体粗细
    */
-  rotateAngle?: number;
+  fontWeight?: CSSProperties['fontWeight'];
   /**
-   * 设置绘画的颜色、渐变或模式
+   * 设置字体颜色
    */
-  fillStyle?: string;
+  fontColor?: string;
   /**
-   * 设置文本内容的字体属性
+   * 规定字体系列
    */
-  font?: string;
+  fontFamily?: string;
 }
 
 export interface WatermarkDOM {

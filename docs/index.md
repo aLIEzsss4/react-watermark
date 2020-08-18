@@ -13,3 +13,25 @@ npm install --save @pansy/react-watermark
 ## 示例
 
 <code src="./demo/demo-01.tsx" inline />
+
+## API
+
+| 参数          | 说明          | 类型                 | 默认值 | 版本 |
+| ------------ | --------------| ------------------- | ------ | ---- |
+| style        | 额外的样式      | `CSSProperties`     | --     | --   |
+| monitor      | 监听水印元素是否被篡改，被修改或者删除等操作，则重新渲染水印 | `boolean`           | `true` | --   |
+| text         | 水印文本        | `string`            |  --   | --   |
+| options      | 水印配置        | `object`            | `{...}`    | --   |
+
+**options**
+
+| 参数          | 说明          | 类型                 | 默认值 | 版本 |
+| ------------ | --------------| ------------------- | ------ | ---- |
+| width        | 单个水印区域宽度  | `number`           | 160     | --   |
+| height      | 单个水印区域高度   | `number`           | 80 | --   |
+| opacity      | 透明度          | `number`           |  0.15   | --   |
+| rotate      | 旋转的角度        | `number`           | -15     | --   |
+| fontSize      | 字体大小          | `number`           |  14   | --   |
+| fontWeight    | 字体粗细        | `any`           | `normal`   | --   |
+| fontColor      | 字体颜色        | `string`      |  `#727071`   | --   |
+| fontFamily    | 规定字体系列      | `string`      | --     | --   |
