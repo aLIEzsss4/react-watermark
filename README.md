@@ -1,6 +1,6 @@
-<h1 align="center">React Watermark</h1>
+<h1 align="center">@pansy/react-watermark</h1>
 
-<h4 align="center">React watermark component<h4>
+<h4 align="center">水印组件<h4>
 
 ## ✨ 特性
 
