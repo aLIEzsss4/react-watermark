@@ -25,6 +25,10 @@ export interface WatermarkProps {
    */
   options?: Options;
   /**
+   * 样式层级
+   */
+  zIndex?: number;
+  /**
    *
    */
   securityAlarm?: () => void;
@@ -48,7 +52,6 @@ const defaultStyle: React.CSSProperties = {
   top: 0,
   bottom: 0,
   opacity: 0.7,
-  zIndex: 9999,
   pointerEvents: 'none',
   overflow: 'hidden',
   backgroundColor: 'transparent',
@@ -63,11 +66,15 @@ const Watermark: React.FC<WatermarkProps> = ({
   text,
   monitor,
   options,
+  zIndex,
   securityAlarm,
   children
 }) => {
   const watermarkId = genRandomId('watermark');
   const watermarkWrapperId = genRandomId('watermark-wrapper');
+  defaultStyle.zIndex = zIndex;
+  const waterMarkStyle = getStyleStr(defaultStyle);
+
 
   const security = React.useRef<any>(null);
   const DOMRemoveObserver = React.useRef<any>();
@@ -128,7 +135,8 @@ Watermark.defaultProps = {
   monitor: true,
   renderer: 'canvas',
   options: defaultOptions,
-  securityAlarm: noop
+  securityAlarm: noop,
+  zIndex: 9999
 }
 
 export default Watermark;
