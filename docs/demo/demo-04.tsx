@@ -8,7 +8,8 @@ export default () => {
       style={{ width: '100%', height: 500 }}
       text="测试水印"
       options={{
-        fontColor: 'red'
+        fontColor: 'red',
+        rotate: 20
       }}
     >
       <div />

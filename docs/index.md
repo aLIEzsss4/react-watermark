@@ -10,15 +10,31 @@ yarn add @pansy/react-watermark
 npm install --save @pansy/react-watermark
 ```
 
-## 示例
+## 使用
 
-<code src="./demo/demo-01.tsx" inline />
+```
+import React from 'react';
+import Watermark from '@pansy/react-watermark';
+
+export default () => {
+  return (
+    <WaterMark style={{ width: 500, height: '100%' }} text="测试水印">
+      <div>
+        <button>
+          123
+        </button>
+      </div>
+    </WaterMark>
+  )
+}
+```
 
 ## API
 
 | 参数          | 说明          | 类型                 | 默认值 | 版本 |
 | ------------ | --------------| ------------------- | ------ | ---- |
 | style        | 额外的样式      | `CSSProperties`     | --     | --   |
+| zIndex        | 水印层级      | `number`     | `9999`     | 1.0.2   |
 | monitor      | 监听水印元素是否被篡改，被修改或者删除等操作，则重新渲染水印 | `boolean`           | `true` | --   |
 | text         | 水印文本        | `string`            |  --   | --   |
 | options      | 水印配置        | `object`            | `{...}`    | --   |

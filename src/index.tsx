@@ -58,7 +58,6 @@ const defaultStyle: React.CSSProperties = {
   backgroundRepeat: 'repeat'
 };
 
-const waterMarkStyle = getStyleStr(defaultStyle);
 const noop = function () {};
 
 const Watermark: React.FC<WatermarkProps> = ({
