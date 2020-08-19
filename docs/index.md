@@ -43,11 +43,11 @@ export default () => {
 
 | 参数          | 说明          | 类型                 | 默认值 | 版本 |
 | ------------ | --------------| ------------------- | ------ | ---- |
-| width        | 单个水印区域宽度  | `number`           | 160     | --   |
-| height      | 单个水印区域高度   | `number`           | 80 | --   |
-| opacity      | 透明度          | `number`           |  0.15   | --   |
-| rotate      | 旋转的角度        | `number`           | -15     | --   |
-| fontSize      | 字体大小          | `number`           |  14   | --   |
-| fontWeight    | 字体粗细        | `any`           | `normal`   | --   |
+| width        | 单个水印区域宽度  | `number`           | `160`    | --   |
+| height      | 单个水印区域高度   | `number`           | `80` | --   |
+| opacity      | 透明度          | `number`           |  `0.2`   | --   |
+| rotate      | 旋转的角度        | `number`           | `20`     | --   |
+| fontSize      | 字体大小          | `number`           |  `14`   | --   |
+| fontWeight    | 字体粗细        | --           | `normal`   | --   |
 | fontColor      | 字体颜色        | `string`      |  `#727071`   | --   |
-| fontFamily    | 规定字体系列      | `string`      | --     | --   |
+| fontFamily    | 规定字体系列      | `string`      | `sans-serif`    | --   |

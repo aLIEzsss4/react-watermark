@@ -9,7 +9,7 @@ export default () => {
       text="测试水印"
       options={{
         fontColor: 'red',
-        rotate: 20
+        rotate: -20
       }}
     >
       <div />

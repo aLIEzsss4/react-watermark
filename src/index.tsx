@@ -36,9 +36,9 @@ export interface WatermarkProps {
 
 const defaultOptions: Options = {
   width: 160,
-  height: 100,
-  opacity: 0.15,
-  rotate: -20,
+  height: 80,
+  opacity: 0.2,
+  rotate: 20,
   fontColor: '#727071',
   fontWeight: 'normal',
   fontFamily: 'sans-serif',
