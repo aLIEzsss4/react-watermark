@@ -84,7 +84,7 @@ class SecurityDefense {
     let observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.type === 'attributes') {
-          target.parentNode.removeChild(target)
+          // target.parentNode.removeChild(target)
           observer.disconnect()
         }
       })
